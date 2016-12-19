@@ -171,14 +171,14 @@ public class ShiftReduce {
 			// lexical reduction
 			Terminal topT = (Terminal) top;
 
-			// clone input configuration
-			ShiftReduce sr = clone();
-
-			// clone the reduction stack
-			Stack<Symbol> prediction = sr.getRedStack();
-
 			//for every lhs
 			for(NonTerminal nt : lexicon.getPosTags(topT)){
+				
+				// clone input configuration
+				ShiftReduce sr = clone();
+
+				// clone the reduction stack
+				Stack<Symbol> prediction = sr.getRedStack();
 				
 				//make a rhs
 				ArrayList<Symbol> rhs = new ArrayList<>();
